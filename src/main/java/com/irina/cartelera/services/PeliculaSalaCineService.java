@@ -90,17 +90,20 @@ public class PeliculaSalaCineService {
     }
     
     //buscar por nombre
-    public List<PeliculaSalaCine> buscarPeliPorNombre(String nombre, Integer idSala){
-       List<PeliculaSalaCine> listadoGeneral = repoPS.findAll();
-       
-       List<PeliculaSalaCine> listadoPS = new ArrayList<>();
-       
-        for (PeliculaSalaCine pelis : listadoGeneral) {
-            if (pelis.getPelicula().getNombre().equals(nombre) && pelis.getSalaCine().getIdSala().equals(idSala)) {
-                listadoPS.add(pelis);
-            }
+    public List<PeliculaSalaCine> buscarPeliPorNombre(String nombre, Long idSala){
+        return repoPS.buscarNombre(nombre, idSala);
+    }
+    
+    //cantidad de pelis por sala
+    public String peliPorSala(String nombreSala){
+        int cantidad = repoPS.buscarPeliPorSala(nombreSala).size();
+        if (cantidad < 3) {
+            return "Sala casi Vacía";
+        } else if (cantidad <= 5) {
+            return "Sala casi llena";
+        } else {
+            return "Sala llena";
         }
-        
-        return listadoPS;
+
     }
 }

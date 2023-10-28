@@ -21,7 +21,7 @@ public class SalaCine {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer idSala;
+    private Long idSala;
     
     private String nombre;
     private Integer estado;

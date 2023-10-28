@@ -31,7 +31,16 @@ public class PeliculaControlador {
      * Buscar la película de acuerdo con el nombre de la película e identificador de la sala. REQUERIDO
     */
     @PostMapping("/buscarPorNombre")
-    public List<PeliculaSalaCine> buscarPeli(@RequestBody String nombrePeli, @RequestBody Integer idSala){
+    public List<PeliculaSalaCine> buscarPeli(@RequestParam String nombrePeli, @RequestParam Long idSala){
         return peliSalaServ.buscarPeliPorNombre(nombrePeli, idSala);
+    }
+    
+    /*
+    * Se necesita buscar por el nombre de la sala de cine y presentar
+    */
+    @PostMapping("/estado")
+    public String estadoSala(@RequestParam String nombreSala){
+        return peliSalaServ.peliPorSala(nombreSala);
+        
     }
 }

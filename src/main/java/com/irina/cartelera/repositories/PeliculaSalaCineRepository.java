@@ -8,6 +8,7 @@ import com.irina.cartelera.entities.PeliculaSalaCine;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -16,5 +17,10 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface PeliculaSalaCineRepository extends JpaRepository<PeliculaSalaCine, Integer>{
-   
+    @Query(value = "SELECT ps FROM PeliculaSalaCine ps WHERE ps.pelicula.nombre = :nombre AND ps.salaCine.idSala = :idSala")
+        List<PeliculaSalaCine> buscarNombre(@Param("nombre") String nombre,@Param("idSala") Long idSala);
+        
+        
+    @Query(value="SELECT ps FROM PeliculaSalaCine ps WHERE ps.salaCine.nombre = :nombre")
+    List<PeliculaSalaCine> buscarPeliPorSala(@Param("nombre") String nombre);
 }
