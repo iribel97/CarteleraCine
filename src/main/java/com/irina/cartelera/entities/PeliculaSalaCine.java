@@ -1,7 +1,7 @@
 
 package com.irina.cartelera.entities;
 
-import java.sql.Date;
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,6 +11,7 @@ import javax.persistence.TemporalType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import javax.persistence.ManyToOne;
 
 /**
  *
@@ -30,5 +31,8 @@ public class PeliculaSalaCine {
     private Date fechaPublicacion;
     @Temporal(TemporalType.TIMESTAMP) 
     private Date fechaFin;
+    
+    @ManyToOne
+    private Pelicula pelicula;
     
 }
