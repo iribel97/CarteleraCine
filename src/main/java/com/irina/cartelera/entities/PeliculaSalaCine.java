@@ -34,5 +34,9 @@ public class PeliculaSalaCine {
     
     @ManyToOne
     private Pelicula pelicula;
+
+
+    @ManyToOne
+    private SalaCine salaCine;
     
 }
