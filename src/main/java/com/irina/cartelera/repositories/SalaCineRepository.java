@@ -6,11 +6,13 @@ package com.irina.cartelera.repositories;
 
 import com.irina.cartelera.entities.SalaCine;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author irina
  */
+@Repository
 public interface SalaCineRepository extends JpaRepository<SalaCine, Integer>{
     
 }
