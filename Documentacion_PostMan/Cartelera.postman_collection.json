@@ -1,0 +1,91 @@
+{
+	"info": {
+		"_postman_id": "ca245e7a-d59b-45e2-ac58-6591300400ad",
+		"name": "Cartelera",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30810364"
+	},
+	"item": [
+		{
+			"name": "ListarPeliculas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "Localhost:8080/pelicula",
+					"host": [
+						"Localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pelicula"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Localhost:8080/pelicula/buscarPorNombre?nombrePeli=Harry%20Potter%20y%20el%20prisionero%20de%20Azkaban&idSala=2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "Localhost:8080/pelicula/buscarPorNombre?nombrePeli=Harry%20Potter%20y%20el%20prisionero%20de%20Azkaban&idSala=2",
+					"host": [
+						"Localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pelicula",
+						"buscarPorNombre"
+					],
+					"query": [
+						{
+							"key": "nombrePeli",
+							"value": "Harry%20Potter%20y%20el%20prisionero%20de%20Azkaban"
+						},
+						{
+							"key": "idSala",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Localhost:8080/pelicula/estado?nombreSala=Sala%201",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "Localhost:8080/pelicula/estado?nombreSala=Sala%201",
+					"host": [
+						"Localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pelicula",
+						"estado"
+					],
+					"query": [
+						{
+							"key": "nombreSala",
+							"value": "Sala%201"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
